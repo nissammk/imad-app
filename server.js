@@ -5,7 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne = {
+var articles= {
+`article-one = {
     title: 'Article one | Nissam ',
     heading:'Article one',
     date : '29 Aug 2017',
@@ -19,7 +20,28 @@ var articleOne = {
                 <p>
                     This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.
                 </p>`
+},
+`article-two = { 
+    title: 'Article one | Nissam ',
+    heading:'Article Two',
+    date : '29 Juy 2017',
+    content: 
+    `<p>
+                    This is the content for my second article.
+    </p>`
+    },
+`article-three ={
+    title: 'Article one | Nissam ',
+    heading:'Article Three',
+    date : '29 June 2017',
+    content: 
+    `<p>
+                    This is the content for my third article.
+    </p>`
 };
+};
+
+
 function createTemplate(data) {
     var title = data.title
     var heading = data.heading
@@ -59,15 +81,13 @@ return htmlTemplate;
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-app.get('/article-One',function(req,res) {
-  res.send(createTemplate(articleOne));
+app.get('/:articleName',function(req,res) {
+    //articleName == article-one
+    //articles[articleName] = {} content object for article-one
+  var articleName=article.parames.articleName;
+  res.send(createTemplate(articles[articleName]));
 });
-app.get('/article-Two',function(req,res) {
-  res.sendFile(path.join(__dirname, 'ui', 'Article-two.html'));
-});
-app.get('/article-Three',function(req,res) {
-    res.sendFile(path.join(__dirname, 'ui', 'Article-Three.html'));
-});
+
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
