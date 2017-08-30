@@ -23,7 +23,7 @@ var articles = {
                 </p>`
     },
     'article-two': { 
-    title: 'Article one | Nissam ',
+    title: 'Article two | Nissam ',
     heading:'Article Two',
     date : '29 Juy 2017',
     content: 
@@ -32,7 +32,7 @@ var articles = {
     </p>`
     },
     'article-three':{
-    title: 'Article one | Nissam ',
+    title: 'Article three | Nissam ',
     heading:'Article Three',
     date : '29 June 2017',
     content: 
