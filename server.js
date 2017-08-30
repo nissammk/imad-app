@@ -5,8 +5,9 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+
 var articles = {
-    `article-one`: {
+    'article-one': {
     title: 'Article one | Nissam ',
     heading:'Article one',
     date : '29 Aug 2017',
@@ -21,7 +22,7 @@ var articles = {
                     This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.
                 </p>`
     },
-    `article-two`: { 
+    'article-two': { 
     title: 'Article one | Nissam ',
     heading:'Article Two',
     date : '29 Juy 2017',
@@ -30,7 +31,7 @@ var articles = {
                     This is the content for my second article.
     </p>`
     },
-    `article-three`:{
+    'article-three':{
     title: 'Article one | Nissam ',
     heading:'Article Three',
     date : '29 June 2017',
